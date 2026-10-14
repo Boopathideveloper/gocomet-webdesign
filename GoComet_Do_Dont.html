@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#020715">
+  <title>GoComet — Quick Do / Don’t Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #020715;
+      --surface: #071225;
+      --surface-raised: #0b1b34;
+      --ink: #fff;
+      --muted: #9aabc2;
+      --line: rgba(219,231,244,.14);
+      --cyan: #67e8f9;
+      --cyan-soft: #b7efff;
+      --blue: #1684d2;
+      --success: #62d6a7;
+      --danger: #ff7d88;
+      --font-display: "Lexend", system-ui, sans-serif;
+      --font-body: "DM Sans", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background: radial-gradient(ellipse 72% 34% at 50% -10%, rgba(13,111,194,.22), transparent 74%), var(--bg);
+      color: var(--ink);
+      font: 400 15px/1.6 var(--font-body);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(100% - 48px, 1040px); margin: auto; }
+    .topbar {
+      position: sticky;
+      z-index: 2;
+      top: 12px;
+      display: flex;
+      min-height: 60px;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 12px;
+      padding: 0 20px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(11,27,52,.84);
+      backdrop-filter: blur(16px);
+    }
+    .brand-logo { display: block; width: 150px; height: auto; }
+    .back-link { color: var(--cyan-soft); font-size: 12px; }
+    main { padding: 74px 0 80px; }
+    .eyebrow { color: var(--cyan); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: var(--font-display); }
+    h1 { max-width: 740px; margin: 12px 0 12px; font-size: clamp(38px,7vw,64px); font-weight: 500; letter-spacing: -.06em; line-height: 1.08; }
+    h1 span { color: var(--cyan-soft); }
+    .intro { max-width: 620px; margin-bottom: 30px; color: var(--muted); }
+    .pairs { display: grid; gap: 12px; }
+    .pair {
+      display: grid;
+      grid-template-columns: 150px minmax(0,1fr) minmax(0,1fr);
+      gap: 18px;
+      align-items: start;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(255,255,255,.04), rgba(255,255,255,.012));
+    }
+    .pair h2 { margin: 1px 0 0; font-size: 14px; font-weight: 500; }
+    .rule { display: grid; grid-template-columns: 22px 1fr; gap: 9px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .rule strong { display: block; margin-bottom: 3px; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .rule.do strong { color: var(--success); }
+    .rule.dont strong { color: var(--danger); }
+    .symbol { display: grid; width: 21px; height: 21px; place-items: center; margin-top: 1px; border: 1px solid currentColor; border-radius: 50%; font-size: 12px; line-height: 1; }
+    .do .symbol { color: var(--success); }
+    .dont .symbol { color: var(--danger); }
+    .closing {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border: 1px solid rgba(103,232,249,.22);
+      border-radius: 14px;
+      background: rgba(13,111,194,.09);
+      color: var(--cyan-soft);
+      font-size: 13px;
+    }
+    footer { padding: 20px 0 32px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+    @media (max-width: 680px) {
+      .shell { width: min(100% - 30px, 1040px); }
+      main { padding-top: 54px; }
+      .pair { grid-template-columns: 1fr 1fr; gap: 14px; padding: 16px; }
+      .pair h2 { grid-column: 1 / -1; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+    }
+    @media (max-width: 430px) {
+      .topbar { min-height: 54px; padding: 0 14px; }
+      .brand-logo { width: 125px; }
+      .back-link { font-size: 10px; }
+      .pair { grid-template-columns: 1fr; }
+      .pair h2 { grid-column: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a href="./GoComet_Design_System.html" aria-label="Return to GoComet design system"><img class="brand-logo" src="./GoComet_logo.webp" width="314" height="42" alt="GoComet"></a>
+      <a class="back-link" href="./GoComet_Design_System.html">← Full design system</a>
+    </header>
+    <main>
+      <span class="eyebrow">A quick guide for every team</span>
+      <h1>Keep it clear.<br><span>Keep it GoComet.</span></h1>
+      <p class="intro">Use these simple checks when creating a page, slide, dashboard, or customer message. If you remember one thing: make complex logistics feel clear and connected.</p>
+      <div class="pairs">
+        <section class="pair" aria-labelledby="color-title">
+          <h2 id="color-title">Color & status</h2>
+          <div class="rule do"><span class="symbol" aria-hidden="true">✓</span><div><strong>Do</strong>Start with dark navy and white. Use blue for actions and cyan to highlight one important detail. Label every status.</div></div>
+          <div class="rule dont"><span class="symbol" aria-hidden="true">×</span><div><strong>Don’t</strong>Use bright colors just for decoration, or make people guess what a color means.</div></div>
+        </section>
+        <section class="pair" aria-labelledby="type-title">
+          <h2 id="type-title">Type & headings</h2>
+          <div class="rule do"><span class="symbol" aria-hidden="true">✓</span><div><strong>Do</strong>Use Lexend for headings and DM Sans for reading. Keep headings short; apply the white-to-ice gradient to one key phrase.</div></div>
+          <div class="rule dont"><span class="symbol" aria-hidden="true">×</span><div><strong>Don’t</strong>Gradient whole paragraphs, use tiny text, or mix unrelated fonts and weights.</div></div>
+        </section>
+        <section class="pair" aria-labelledby="layout-title">
+          <h2 id="layout-title">Layout & imagery</h2>
+          <div class="rule do"><span class="symbol" aria-hidden="true">✓</span><div><strong>Do</strong>Align content to a clean grid and leave breathing room. Choose real ports, cargo, and people at work.</div></div>
+          <div class="rule dont"><span class="symbol" aria-hidden="true">×</span><div><strong>Don’t</strong>Cram content edge to edge, use generic office photos, or put text over a busy image.</div></div>
+        </section>
+        <section class="pair" aria-labelledby="data-title">
+          <h2 id="data-title">Data & proof</h2>
+          <div class="rule do"><span class="symbol" aria-hidden="true">✓</span><div><strong>Do</strong>Show the unit, time period, and source for a number. Keep chart labels and colors consistent.</div></div>
+          <div class="rule dont"><span class="symbol" aria-hidden="true">×</span><div><strong>Don’t</strong>Publish an unverified claim, hide the chart scale, or use color as the only clue.</div></div>
+        </section>
+        <section class="pair" aria-labelledby="product-title">
+          <h2 id="product-title">Icons & AI</h2>
+          <div class="rule do"><span class="symbol" aria-hidden="true">✓</span><div><strong>Do</strong>Use one simple outline-icon style. For an AI Worker, show what it is doing and when a person needs to review.</div></div>
+          <div class="rule dont"><span class="symbol" aria-hidden="true">×</span><div><strong>Don’t</strong>Mix icon styles or imply that an AI action is complete while it is still running.</div></div>
+        </section>
+      </div>
+      <p class="closing">When in doubt: remove one thing, make the next action obvious, and check that the page still reads clearly on a small screen.</p>
+    </main>
+    <footer>GoComet · Quick Do / Don’t guide · See the <a href="./GoComet_Design_System.html">full brand design system</a> for colors, typography, and reusable components.</footer>
+  </div>
+</body>
+</html>
